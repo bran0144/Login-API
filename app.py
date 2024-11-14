@@ -33,7 +33,7 @@ def register():
 
    
 
-@app.route('/', methods=['POST'])
+@app.route('/login', methods=['POST'])
 def login():
 
     data = request.get_json()

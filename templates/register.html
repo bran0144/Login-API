@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Register</title>
+
+      </head>
+
+{% block content %}
+  <h2>Create New Account</h2>
+
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      <ul class="messages">
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  {% endwith %}
+  <form method="post" action="{{ url_for('register') }}">
+    <label for="Name">Name:</label>
+    <input type="text" name="name" required>
+    <label for="Email">Email:</label>
+    <input type="text" name="email" required>
+    <label for="password">Password:</label>
+    <input type="password" name="password" required>
+    <button type="submit">Register</button>
+  </form>
+{% endblock %}
+
+</html>
